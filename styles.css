@@ -1,0 +1,378 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:wght@300&display=swap');
+
+/* ----- Universal styles ----- */
+
+:root {
+    /* Colors */
+    --gray: hsl(0, 0%, 55%);
+    --darkGray: hsl(0, 0%, 41%);
+    --white: #fff;
+    --black: #000;
+    /* Fonts */
+    --Alata: 'Alata', sans-serif; /* 400 */
+    --Josefin: 'Josefin Sans', sans-serif; /* 300 */
+    }
+    
+::selection {
+    background-color: var(--darkGray);
+    color: var(--white);
+}
+    
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+    
+body {
+    height: 100vh;
+    min-width: 280px;
+    max-width: 1440px;
+    overflow-x: hidden;
+    margin: 0 auto;
+    font-family: var(--Josefin);
+    font-weight: 300;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* ----- Header styles ----- */
+
+header {
+    background-image: url(images/mobile/image-hero.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 90vh;
+    padding: 1em;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav img {
+    transition: all 0.2s ease-in-out;
+}
+
+nav > a {
+    margin-right: auto;
+}
+
+nav ul {
+    display: flex;
+    gap: 2em;
+}
+
+nav ul li a {
+    color: var(--white);
+    font-family: var(--Alata);
+    font-weight: 400;
+    padding-bottom: 0.5em;
+    transition: all 0.2s ease-in-out;
+}
+
+h1 {
+    color: var(--white);
+    border: 2px solid var(--white);
+    font-size: 2.75rem;
+    padding: 0.5em;
+    margin-top: 4.5em;
+    font-weight: 200;
+}
+
+/* ----- Leader styles ----- */
+
+.leader {
+    margin-top: 6em;
+    padding: 1em;
+    text-align: center;
+}
+
+.leader > img {
+    margin-bottom: 3em;
+}
+
+h2 {
+    font-size: 2.25rem;
+    margin-bottom: 0.5em;
+    font-weight: 200;
+    text-align: center;
+}
+
+.leader p {
+    font-size: 1rem;
+    color: var(--darkGray);
+    line-height: 2;
+    font-family: var(--Alata);
+    max-width: 85%;
+    margin: 0 auto 5em auto;
+}
+
+/* ----- Creations styles ----- */
+
+.creations {
+    padding: 1em;
+}
+
+.creations-grid {
+    margin-bottom: 2.5em;
+}
+
+.creations h2 {
+    margin-bottom: 1.25em;
+}
+
+:is(.deep-earth, .night-arcade, .soccer-team, .the-grid, .from-above, .borealis, .curiosity, .fisheye) {
+    position: relative;
+    margin-bottom: 1em;
+    overflow: hidden;
+    transition: all 0.2s ease-in-out;
+}
+
+:is(.deep-earth, .night-arcade, .soccer-team, .the-grid, .from-above, .borealis, .curiosity, .fisheye):after {
+    content:'';
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background: linear-gradient(90deg, #000, transparent, transparent);
+    transition: all 0.2s ease-in-out;
+}
+
+.creations-grid h3 {
+    position: absolute;
+    bottom: 0.75em;
+    left: 0.75em;
+    color: var(--white);
+    font-size: 1.6rem;
+    font-weight: 200;
+    z-index: 2;
+}
+
+.creations a {
+    display: block;
+    margin: 0 auto 5em auto;
+    width: 160px;
+    color: var(--black);
+    border: 1px solid var(--black);
+    padding: 0.5em 2em;
+    text-align: center;
+    font-family: var(--Alata);
+    font-weight: 300;
+    letter-spacing: 5px;
+    transition: all 0.2s ease-in-out;
+}
+
+/* ----- Footer styles ----- */
+
+footer {
+    background-color: var(--black);
+    color: var(--white);
+    padding: 4em 1em;
+}
+
+.footer-left img {
+    margin: 0 auto 2em auto;
+    transition: all 0.2s ease-in-out;
+}
+
+.footer-nav {
+    text-align: center;
+    margin-bottom: 3em;
+}
+
+.footer-nav ul li a {
+    color: var(--white);
+    line-height: 2.5;
+    font-size: 1.15rem;
+    font-family: var(--Alata);
+    padding-bottom: 0.25em;
+    transition: all 0.2s ease-in-out;
+}
+
+.icons ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    margin-bottom: 1.5em;
+    transition: all 0.2s ease-in-out;
+}
+
+.icons ul li a img {
+    padding-bottom: 0.5em;
+}
+
+.footer-right p {
+    color: var(--darkGray);
+    text-align: center;
+    font-family: var(--Alata);
+    font-size: 1rem;
+}
+
+/* ----- Hover effects ----- */
+
+nav img:hover {
+    transform: scale(110%);
+}
+
+nav ul li a:hover, .footer-nav ul li a:hover, .icons ul li a img:hover {
+    border-bottom: 1px solid white;
+}
+
+.creations a:hover {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.footer-left img:hover {
+    transform: scale(110%);
+    cursor: pointer;
+}
+
+/* ----- Responsive styles ----- */
+
+@media only screen and (min-width: 750px) {
+
+    header {
+        background-image: url(images/desktop/image-hero.jpg);
+        background-size: 100%;
+        background-position: top;
+        height: auto;
+        padding: 5em 10em;
+    }
+
+    h1 {
+        font-size: 3rem;
+        margin-top: 2em;
+        margin-bottom: 0.5em;
+        max-width: 40%;
+    }
+    
+    .leader {
+        margin-top: 6em;
+        padding: 1em 10em;
+        text-align: left;
+        position: relative;
+    }
+
+    .leader-text {
+        position: absolute;
+        top: 10em;
+        right: 0;
+        background-color: var(--white);
+        max-width: 55%;
+        padding: 5em;
+    }
+
+    .leader > img {
+        margin-bottom: 10em;
+    }
+    
+    h2 {
+        font-size: 2.25rem;
+        margin-bottom: 0.5em;
+        text-align: left;
+        max-width: 80%;
+    }
+    
+    .leader p {
+        font-size: 1rem;
+        max-width: 75%;
+        margin: 0 0 5em 0;
+        text-align: left;
+    }
+    
+    .creations {
+        padding: 1em 10em;
+        position: relative;
+    }
+
+    .creations h2 {
+        margin-bottom: 2em;
+    }
+
+    .creations-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 450px);
+        gap: 1.5em;
+        grid-row-gap: 0.5em;
+        margin-bottom: 7.5em;
+    }
+
+    .creations-grid img {
+        width: 100%;
+        height: 100%;
+    }
+
+    :is(.deep-earth, .night-arcade, .soccer-team, .the-grid, .from-above, .borealis, .curiosity, .fisheye):after {
+        background: linear-gradient(0deg, #000, transparent, transparent);
+    }
+
+    .creations-grid h3 {
+        bottom: 1.5em;
+        left: 1.5em;
+    }
+
+    .creations a {
+        position: absolute;
+        top: 1em;
+        right: 10em;
+    }
+
+    footer {
+        padding: 4em 10em;
+        display: flex;
+        justify-content: space-between;
+        align-items: top;
+    }
+
+    .footer-left, .footer-right {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footer-nav {
+        margin-bottom: 0;
+    }
+
+    .icons ul {
+        display: flex;
+        justify-content: flex-end;
+        gap: 1em;
+        margin-bottom: 1.5em;
+    }
+
+    .footer-left img {
+        margin: 0 0 0.9em 0;
+        width: 175px;
+    }
+
+    .footer-nav ul {
+        display: flex;
+        gap: 2em;
+    }
+
+    .footer-right p {
+        text-align: right;
+    }
+
+}
+
+
