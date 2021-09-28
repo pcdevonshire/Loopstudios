@@ -27,7 +27,7 @@
 body {
     height: 100vh;
     min-width: 280px;
-    max-width: 1440px;
+    max-width: 1980px;
     overflow-x: hidden;
     margin: 0 auto;
     font-family: var(--Josefin);
@@ -103,7 +103,7 @@ h1 {
 }
 
 .leader > img {
-    margin-bottom: 3em;
+    margin: 0 auto 3em auto;
 }
 
 h2 {
@@ -251,22 +251,20 @@ nav ul li a:hover, .footer-nav ul li a:hover, .icons ul li a img:hover {
 
     header {
         background-image: url(images/desktop/image-hero.jpg);
-        background-size: 100%;
-        background-position: top;
-        height: auto;
-        padding: 5em 10em;
+        height: 650px;
+        padding: 5em;
     }
 
     h1 {
-        font-size: 3rem;
+        font-size: 4rem;
         margin-top: 2em;
         margin-bottom: 0.5em;
-        max-width: 40%;
+        max-width: 600px;
     }
     
     .leader {
         margin-top: 6em;
-        padding: 1em 10em;
+        padding: 1em 5em;
         text-align: left;
         position: relative;
     }
@@ -276,12 +274,12 @@ nav ul li a:hover, .footer-nav ul li a:hover, .icons ul li a img:hover {
         top: 10em;
         right: 0;
         background-color: var(--white);
-        max-width: 55%;
-        padding: 5em;
+        max-width: 60%;
+        padding: 3em 0 3em 3em;
     }
 
     .leader > img {
-        margin-bottom: 10em;
+        margin: 0 0 10em 0;
     }
     
     h2 {
@@ -299,18 +297,19 @@ nav ul li a:hover, .footer-nav ul li a:hover, .icons ul li a img:hover {
     }
     
     .creations {
-        padding: 1em 10em;
+        padding: 1em 5em;
         position: relative;
     }
 
     .creations h2 {
-        margin-bottom: 2em;
+        text-align: center;
+        margin: 0 auto 2em auto;
     }
 
     .creations-grid {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 1fr);
         gap: 1.5em;
         grid-row-gap: 0.5em;
         margin-bottom: 7.5em;
@@ -327,19 +326,15 @@ nav ul li a:hover, .footer-nav ul li a:hover, .icons ul li a img:hover {
     .creations-grid h3 {
         bottom: 1.5em;
         left: 1.5em;
-    }
-
-    .creations a {
-        position: absolute;
-        top: 1em;
-        right: 10em;
+        right: 1.5em;
     }
 
     footer {
-        padding: 4em 10em;
+        padding: 4em 5em;
         display: flex;
         justify-content: space-between;
         align-items: top;
+        gap: 1em;
     }
 
     .footer-left, .footer-right {
@@ -374,4 +369,51 @@ nav ul li a:hover, .footer-nav ul li a:hover, .icons ul li a img:hover {
 
 }
 
+@media only screen and (min-width: 950px) {
 
+    header {
+        padding: 5em 10em;
+        background-size: cover;
+        
+    }
+
+    .leader {
+        padding: 1em 10em;
+    }
+
+    .leader-text {
+        max-width: 55%;
+        padding: 5em;
+    }
+
+    .creations {
+        padding: 1em 10em;
+    }
+
+    .creations h2 {
+        text-align: left;
+        margin: 0 0 2em 0;
+    }
+
+    .creations-grid {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+    .creations-grid h3 {
+        bottom: 1.5vw;
+        left: 1.5vw;
+        font-size: clamp(1.25rem, 2vw, 2rem);
+    }
+
+    .creations a {
+        position: absolute;
+        top: 1em;
+        right: 10em;
+    }
+
+    footer {
+        padding: 4em 10em;
+    }
+
+}
