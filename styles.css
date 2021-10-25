@@ -13,6 +13,11 @@
     --Josefin: 'Josefin Sans', sans-serif; /* 300 */
 }
     
+::-moz-selection {
+    background-color: var(--darkGray);
+    color: var(--white);
+}
+    
 ::selection {
     background-color: var(--darkGray);
     color: var(--white);
@@ -21,7 +26,8 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
     
 body {
@@ -59,12 +65,20 @@ header {
 }
 
 nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 nav img {
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
 }
 
@@ -103,6 +117,8 @@ nav ul li a {
     font-family: var(--Alata);
     font-weight: 400;
     padding-bottom: 0.5em;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
 }
 
@@ -161,6 +177,8 @@ h2 {
     position: relative;
     margin-bottom: 1em;
     overflow: hidden;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
 }
 
@@ -171,7 +189,11 @@ h2 {
     top:0;
     width:100%;
     height:100%;
+    background: -webkit-gradient(linear, left top, right top, from(#000), color-stop(transparent), to(transparent));
+    background: -o-linear-gradient(left, #000, transparent, transparent);
     background: linear-gradient(90deg, #000, transparent, transparent);
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
 }
 
@@ -196,6 +218,8 @@ h2 {
     font-family: var(--Alata);
     font-weight: 300;
     letter-spacing: 5px;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
 }
 
@@ -209,6 +233,8 @@ footer {
 
 .footer-left img {
     margin: 0 auto 2em auto;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
 }
 
@@ -223,15 +249,25 @@ footer {
     font-size: 1.15rem;
     font-family: var(--Alata);
     padding-bottom: 0.25em;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
 }
 
 .icons ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     gap: 1em;
     margin-bottom: 1.5em;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
 }
 
@@ -249,7 +285,9 @@ footer {
 /* ----- Hover effects ----- */
 
 nav img:hover {
-    transform: scale(110%);
+    -webkit-transform: scale(110%);
+        -ms-transform: scale(110%);
+            transform: scale(110%);
 }
 
 nav ul li a:hover, .footer-nav ul li a:hover, .icons ul li a img:hover {
@@ -262,7 +300,9 @@ nav ul li a:hover, .footer-nav ul li a:hover, .icons ul li a img:hover {
 }
 
 .footer-left img:hover {
-    transform: scale(110%);
+    -webkit-transform: scale(110%);
+        -ms-transform: scale(110%);
+            transform: scale(110%);
     cursor: pointer;
 }
 
@@ -328,12 +368,55 @@ nav ul li a:hover, .footer-nav ul li a:hover, .icons ul li a img:hover {
     }
 
     .creations-grid {
+        display: -ms-grid;
         display: grid;
+        -ms-grid-columns: 1fr 1.5em 1fr;
         grid-template-columns: repeat(2, 1fr);
+        -ms-grid-rows: 1fr 0.5em 1fr 0.5em 1fr 0.5em 1fr;
         grid-template-rows: repeat(4, 1fr);
         gap: 1.5em;
         grid-row-gap: 0.5em;
         margin-bottom: 7.5em;
+    }
+
+    .creations-grid > *:nth-child(1) {
+        -ms-grid-row: 1;
+        -ms-grid-column: 1;
+    }
+
+    .creations-grid > *:nth-child(2) {
+        -ms-grid-row: 1;
+        -ms-grid-column: 3;
+    }
+
+    .creations-grid > *:nth-child(3) {
+        -ms-grid-row: 3;
+        -ms-grid-column: 1;
+    }
+
+    .creations-grid > *:nth-child(4) {
+        -ms-grid-row: 3;
+        -ms-grid-column: 3;
+    }
+
+    .creations-grid > *:nth-child(5) {
+        -ms-grid-row: 5;
+        -ms-grid-column: 1;
+    }
+
+    .creations-grid > *:nth-child(6) {
+        -ms-grid-row: 5;
+        -ms-grid-column: 3;
+    }
+
+    .creations-grid > *:nth-child(7) {
+        -ms-grid-row: 7;
+        -ms-grid-column: 1;
+    }
+
+    .creations-grid > *:nth-child(8) {
+        -ms-grid-row: 7;
+        -ms-grid-column: 3;
     }
 
     .creations-grid img {
@@ -341,6 +424,8 @@ nav ul li a:hover, .footer-nav ul li a:hover, .icons ul li a img:hover {
     }
 
     :is(.deep-earth, .night-arcade, .soccer-team, .the-grid, .from-above, .borealis, .curiosity, .fisheye):after {
+        background: -webkit-gradient(linear, left bottom, left top, from(#000), color-stop(transparent), to(transparent));
+        background: -o-linear-gradient(bottom, #000, transparent, transparent);
         background: linear-gradient(0deg, #000, transparent, transparent);
     }
 
@@ -352,15 +437,26 @@ nav ul li a:hover, .footer-nav ul li a:hover, .icons ul li a img:hover {
 
     footer {
         padding: 4em 5em;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: space-between;
-        align-items: top;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        -webkit-box-align: top;
+            -ms-flex-align: top;
+                align-items: top;
         gap: 1em;
     }
 
     .footer-left, .footer-right {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
     }
 
     .footer-nav {
@@ -368,8 +464,12 @@ nav ul li a:hover, .footer-nav ul li a:hover, .icons ul li a img:hover {
     }
 
     .icons ul {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: flex-end;
+        -webkit-box-pack: end;
+            -ms-flex-pack: end;
+                justify-content: flex-end;
         gap: 1em;
         margin-bottom: 1.5em;
     }
@@ -380,6 +480,8 @@ nav ul li a:hover, .footer-nav ul li a:hover, .icons ul li a img:hover {
     }
 
     .footer-nav ul {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         gap: 2em;
     }
@@ -419,8 +521,12 @@ nav ul li a:hover, .footer-nav ul li a:hover, .icons ul li a img:hover {
     }
 
     .mobile-menu ul {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: end;
+        -webkit-box-pack: end;
+            -ms-flex-pack: end;
+                justify-content: end;
         gap: 2em;
     }
 
@@ -447,8 +553,50 @@ nav ul li a:hover, .footer-nav ul li a:hover, .icons ul li a img:hover {
     }
 
     .creations-grid {
+        -ms-grid-columns: (1fr)[4];
         grid-template-columns: repeat(4, 1fr);
+        -ms-grid-rows: (1fr)[2];
         grid-template-rows: repeat(2, 1fr);
+    }
+
+    .creations-grid > *:nth-child(1) {
+        -ms-grid-row: 1;
+        -ms-grid-column: 1;
+    }
+
+    .creations-grid > *:nth-child(2) {
+        -ms-grid-row: 1;
+        -ms-grid-column: 2;
+    }
+
+    .creations-grid > *:nth-child(3) {
+        -ms-grid-row: 1;
+        -ms-grid-column: 3;
+    }
+
+    .creations-grid > *:nth-child(4) {
+        -ms-grid-row: 1;
+        -ms-grid-column: 4;
+    }
+
+    .creations-grid > *:nth-child(5) {
+        -ms-grid-row: 2;
+        -ms-grid-column: 1;
+    }
+
+    .creations-grid > *:nth-child(6) {
+        -ms-grid-row: 2;
+        -ms-grid-column: 2;
+    }
+
+    .creations-grid > *:nth-child(7) {
+        -ms-grid-row: 2;
+        -ms-grid-column: 3;
+    }
+
+    .creations-grid > *:nth-child(8) {
+        -ms-grid-row: 2;
+        -ms-grid-column: 4;
     }
 
     .creations-grid h3 {
